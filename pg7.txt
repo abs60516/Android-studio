@@ -1,0 +1,173 @@
+package com.example.user.afinal;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Main7Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main7);
+        Button introduction =(Button)findViewById(R.id.button16);
+        Button material =(Button)findViewById(R.id.button17);
+        Button step =(Button)findViewById(R.id.button18);
+        Button back =(Button)findViewById(R.id.button19);
+        Button home =(Button)findViewById(R.id.button20);
+        back.setOnClickListener(Back);
+        home.setOnClickListener(Home);
+        introduction.setOnClickListener(Introduction);
+        material.setOnClickListener(Material);
+        step.setOnClickListener(Step);
+    }
+    private View.OnClickListener Back = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent1 =new Intent(Main7Activity.this , Main6Activity.class);
+            startActivity(intent1);
+        }
+    };
+    private View.OnClickListener Home = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent2 =new Intent(Main7Activity.this , MainActivity.class);
+            startActivity(intent2);
+
+        }
+    };
+    private View.OnClickListener Introduction = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView3);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int k = bundle.getInt("名稱");
+            switch (k){
+                case 9:
+                    show.setText("相較於美式起士蛋糕，日式風味比較輕盈、不膩口，而且加入抹茶粉調味，吃起來帶有淡雅的抹茶味，多吃一件也不太覺得很膩說！");
+                    break;
+                case 10:
+                    show.setText("源自法國東部的勃艮第大區，基本上就是把泡芙麵糰混入天然乳酪，調味之後用烤箱完成的料理，乳酪常見會用Comte, Gruyere, Emmental, Beaufort偏半硬或硬質乳酪，這道鹹點會被拿來當開胃酒的小點心，配白酒蠻適合。");
+                    break;
+                case 11:
+                    show.setText("口感鬆軟又有者淡淡的香蕉香氣泡個紅茶就能享受優雅的下午茶");
+                    break;
+                case 12:
+                    show.setText("可麗露是法國的經典甜點 \n" +
+                            "它的外表是靠著砂糖烤成焦糖的原理令它脆脆硬硬的 \n" +
+                            "跟內裏那蜂巢一樣的綿密又濕濕的口感完全是兩回事 \n" +
+                            "它是外表不華麗不美但吃過一次就一定每天惦掛的甜點");
+            }
+
+        }
+    };
+    private View.OnClickListener Material = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView3);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int k = bundle.getInt("名稱");
+            switch (k){
+                case 9:
+                    show.setText("奶油起士125克\n" +
+                            "牛奶50克\n" +
+                            "無鹽奶油30克\n" +
+                            "蛋黃3個\n" +
+                            "低筋麵粉25克\n" +
+                            "抹茶粉1/2大匙\n" +
+                            "蛋白3個\n" +
+                            "砂糖45克\n" +
+                            "鏡面果膠（或杏桃果膠）");
+                    break;
+                case 10:
+                    show.setText("水60 ml\n" +
+                            "牛奶60 ml\n" +
+                            "天然奶油 butter50 g\n" +
+                            "中筋麵粉70 g\n" +
+                            "全蛋 ?uf2 顆\n" +
+                            "康堤 comte 乳酪100 g\n" +
+                            "水備用20 c.c.\n" +
+                            "鹽1/4 t\n" +
+                            "黑胡椒1/4 t\n" +
+                            "肉豆?1/8 t\n" +
+                            "煙燻紅椒粉1/4 t");
+                    break;
+                case 11:
+                    show.setText("香蕉1又1/2根\n" +
+                            "蛋4顆\n" +
+                            "沙拉油40ml\n" +
+                            "牛奶80ml\n" +
+                            "鹽1小撮\n" +
+                            "低筋麵粉90g\n" +
+                            "細砂糖70g");
+                    break;
+                case 12:
+                    show.setText("牛奶500 ml\n" +
+                            "砂糖200g\n" +
+                            "蛋黃2隻\n" +
+                            "全蛋1隻\n" +
+                            "無鹽奶油25g\n" +
+                            "雲尼拿豆莢1枝\n" +
+                            "中筋麵粉125g\n" +
+                            "蘭姆酒40g");
+
+
+            }
+
+        }
+    };
+    private View.OnClickListener Step = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView3);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int k = bundle.getInt("名稱");
+            switch (k){
+                case 9:
+                    show.setText("1.以隔水加熱的方式，將奶油起士和牛奶拌勻且無結粒，加入無鹽奶油混勻後離火\n" +
+                            "2.加入蛋黃、篩入低筋麵粉和抹茶粉拌勻\n" +
+                            "3.將蛋白放入另一個鋼盆內，用電動攪拌器攪打至粗泡後，分3次加入砂糖，打到蛋白有光澤，末端呈微彎狀\n" +
+                            "4.將蛋白霜分2次混拌均勻\n" +
+                            "5.將步驟5倒入底部和側邊都鋪有烘焙紙的烤模內，然後將烤模放在烤盤內\n" +
+                            "6.在烤盤內倒入溫水後，放進已預熱180℃的烤箱中，烤15-20分鐘至表面上色，再降溫至120-130℃，烤35分鐘。烤好後先不要出爐，在烤箱內燜30分鐘\n" +
+                            "7.將步驟7脫模後，在表面刷上一層鏡面果膠裝飾，然後放入冰箱冷藏4個小時以上即可");
+                    break;
+                case 10:
+                    show.setText("1.先預熱烤箱180度\n" +
+                            "2.水，牛奶，動物性奶油，鹽，加熱至滾沸\n" +
+                            "3.熄火，一口氣倒入麵粉，攪拌至看不見粉\n" +
+                            "4.開小火繼續攪直到麵糰呈半透明，鍋底有結薄薄一層皮\n" +
+                            "5.離火，分次倒入蛋液，攪拌直到麵糰將蛋液吸收\n" +
+                            "6.提起刮刀，麵糰附著在上面呈邊緣光滑倒三角型，有彈性感，\n" +
+                            "7.趁熱加入刨好的乳酪絲，加入調味料，拌至稍微融化即可入擠花袋\n" +
+                            "8.烤盤噴點水，放上烘焙紙，擠上泡芙約3至4公分寬，泡芙間留烤焙時的膨脹間距\n" +
+                            "9.擠完要馬上入烤箱，烤30分鐘或直到表面金黃即可");
+                    break;
+                case 11:
+                    show.setText("1.香蕉用叉子壓成泥後放一旁\n" +
+                            "2.蛋黃和蛋白分開後蛋黃稍微攪拌後加入沙拉油.牛奶.香蕉和鹽攪拌均勻再加入低筋麵粉拌勻後放在一旁\n" +
+                            "3.蛋白先打到有些發白有泡泡後再分兩次加入糖 打到像照片那樣拿起來後不會滴就可以了\n" +
+                            "4.先把一小部分的蛋白加入剛剛辦好的蛋黃液裡拌勻 再加入剩下的蛋白用刮刀輕輕的由下往上拌勻 做完的時候就可以先預熱烤箱160度大約5分鐘 然後把麵糊到入模裡 稍微敲一下把裡面的空氣敲出來\n" +
+                            "5.這時候烤箱也預熱好了 把蛋糕放入烤箱用160度烤35分 開使烤後大約烤20分鐘後就要掉頭(我使用的是小的花形戚風蛋糕烤模,如果是用大的戚風蛋糕模的話 要使用直徑約17公分的烤模) 烤完後倒扣放涼就完成了!");
+                    break;
+                case 12:
+                    show.setText("1.牛奶,奶油和雲尼拿豆莢一起放進鍋中用小火煮至60度 沒有?度計的煮至微?就好,不要煮沸\n" +
+                            "2.雞蛋,蛋黃加入砂糖拌?\n" +
+                            "3.煮?的牛奶加入蛋糊中拌?\n" +
+                            "4.把過篩的中筋麵粉加入拌?，麵糊用保鮮紙蓋好放進冰箱冷藏最少24小時\n" +
+                            "5.將麵糊取?回至室? 將奶油溶化至圖中的狀態\n" +
+                            "6.在可麗露模上掃上一層薄薄的奶油\n" +
+                            "7.把回?的麵糊過篩令麵糊更滑，麵糊倒入模中倒至8-9分滿\n" +
+                            "8.預熱焗爐至220度 把蛋糕放在下層烤15分鐘 之後用190度烤50-60分鐘 期間可麗露會澎漲 這時候要打開烤箱讓它回?一下 直至看到它回縮了就可以繼續烤 烤完立刻脫模啊 烤的時間根據每個烤箱也不一樣 只要看到底部上色了 焦焦的就可以");
+
+            }
+
+        }
+    };
+}

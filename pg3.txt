@@ -1,0 +1,178 @@
+package com.example.user.afinal;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Main3Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main3);
+        Button introduction =(Button)findViewById(R.id.button6);
+        Button material =(Button)findViewById(R.id.button7);
+        Button step =(Button)findViewById(R.id.button8);
+        Button back =(Button)findViewById(R.id.button9);
+        Button home =(Button)findViewById(R.id.button10);
+        back.setOnClickListener(Back);
+        home.setOnClickListener(Home);
+        introduction.setOnClickListener(Introduction);
+        material.setOnClickListener(Material);
+        step.setOnClickListener(Step);
+    }
+    private View.OnClickListener Introduction = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int i = bundle.getInt("名稱");
+            switch (i){
+                case 1:
+                    show.setText("在歐姆蛋上灑上少許乾燥香草、黑胡椒及蒜粉，香氣四溢~\n" +
+                            "再佐上些許醬汁增添風味與鹹度，\n" +
+                            "切開後緩緩流出的起司混合半熟蛋液，\n" +
+                            "口感濕潤軟嫩，食材雖簡單但滋味仍有層次");
+                    break;
+                case 2:
+                    show.setText("簡易的古早味蛋餅，不需要去揉麵桿皮， \n" +
+                            "只要快速混合呈粉漿既可，也不用靜置省事多了。 \n" +
+                            "餅皮軟香中帶脆，裡面滿滿的蛋香，當早餐或點心吃都不錯");
+                    break;
+                case 3:
+                    show.setText("這是在日本網站上看到的最近很流行的早餐食譜。 \n" +
+                            "只要有一個圓形的鑄鐵鍋或平底鍋， \n" +
+                            "把發酵好的麵糰和起司放入烤箱一起烤， \n" +
+                            "就會變成好鬆軟好好吃的起司餐包。 \n" +
+                            "這次我用適合初學者或新手入門的低溫發酵法， \n" +
+                            "作法真的很簡單， \n" +
+                            "大家一起來做做看好吃的起司餐包吧!");
+                    break;
+                case 4:
+                    show.setText("很多小朋友不敢吃沙拉，這道是非常推薦的入門款，\n" +
+                            "作法不僅簡單，味道也很不錯，亦是親子同樂的首選！吃慣了外面的三明治，在家也可以輕鬆做");
+                    break;
+
+
+
+            }
+        }
+    };
+
+    private View.OnClickListener Material = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int i = bundle.getInt("名稱");
+            switch (i){
+                case 1:
+                    show.setText("蛋3顆\n" +
+                            "牛奶2大匙\n" +
+                            "鹽1/4小匙\n" +
+                            "罐頭鮪魚肉35g\n" +
+                            "低脂起司絲適量");
+                    break;
+                case 2:
+                    show.setText("雞蛋3顆\n" +
+                            "粉漿（約可做三人份）\n" +
+                            "高筋麵粉60g\n" +
+                            "木薯粉30g\n" +
+                            "水180ml\n" +
+                            "鹽1小匙\n" +
+                            "額外食材:\n" +
+                            "水煮鮪魚1罐\n" +
+                            "胡椒粉適量\n" +
+                            "羅勒葉粉適量");
+                    break;
+                case 3:
+                    show.setText("麵粉500克\n" +
+                            "牛奶或水300克\n" +
+                            "雞蛋1顆\n" +
+                            "鹽3克\n" +
+                            "速發酵母5克\n" +
+                            "糖3克\n" +
+                            "橄欖油2小瓶蓋\n" +
+                            "披薩用起司適量");
+                    break;
+                case 4:
+                    show.setText("水煮蛋兩顆\n" +
+                            "吐司六片\n" +
+                            "沙拉醬適量\n" +
+                            "胡椒適量\n" +
+                            "番茄醬適量");
+                    break;
+
+
+            }
+
+
+        }
+    };
+
+    private View.OnClickListener Step = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int i = bundle.getInt("名稱");
+            switch (i){
+                case 1:
+                    show.setText("1.取一大碗打入蛋，加入牛奶及鹽後，攪拌均勻\n" +
+                            "2.鍋中倒入適量油熱鍋\n" +
+                            "3.一次倒入所有蛋液，翻轉鍋子讓蛋液攤平，轉小火，用筷子在蛋液中由外往內畫圈，讓蛋液呈現澎散狀\n" +
+                            "4.待蛋液半凝固後就關火，鋪上罐頭鮪魚肉及起司絲，蓋上鍋蓋用餘溫悶約1~2分鐘（依個人喜好熟度調整時間）\n" +
+                            "5.掀蓋後用鍋鏟將蛋餅捲起\n" +
+                            "6.呈盤，依個人喜好添加醬汁或灑上辛香料");
+                    break;
+                case 2:
+                    show.setText("1.雞蛋打散備用。粉漿充分混和均勻直到看不見粉末變成液態為止\n" +
+                            "2.平底鍋倒入適量橄欖油（沙拉油亦可），用廚房紙巾抹均勻，倒入一人份粉漿搖晃平底鍋至餅皮平整（不要先開火熱鍋以免粉漿馬上凝固不好整形）\n" +
+                            "3.開小火慢煎到粉漿周圍微微翹起餅皮轉黃，用鍋鏟整形邊緣\n"+
+                            "4.餅皮中間倒入一人份蛋液，讓蛋保持在餅皮中間，蓋上鍋蓋再煎數十秒，蛋快全熟後關火，繼續悶著直到蛋全熟\n"+
+                            "5.打開鍋蓋，撒上胡椒粉與鋪上喜歡的配料捲起，即可起鍋擺盤！");
+                    break;
+                case 3:
+                    show.setText("1.把起司以外的所有材料放進一個大容器裡拌勻。牛奶可以留30CC最後依據麵團的溼度慢慢加入。用手按壓搓揉麵團至表面平整，我這次大約揉了10分鐘。\n" +
+                            "2.蓋上毛巾讓麵糰發酵，最近天氣比較涼等了約3小時。\n" +
+                            "3.發酵成兩倍大之後，用手指搓一個洞，不會馬上彈回來就代表發酵成功。 再把麵團拿出來用手按壓揉一下，我大約揉5分鐘，就表面光滑即可。\n" +
+                            "4.把麵團放入塑膠袋或密封袋中，接著放進冰箱冷藏3小時。 有時候我會前一晚揉好麵糰，放入冰箱，隔天早上起床再拿出來塑型。\n" +
+                            "5.把麵團從冰箱取出，冰過的麵團會變得很有韌性光滑不黏手，比較好塑型。 取一小塊麵團捏成圓形後，放入圓形的鑄鐵鍋或是平底鍋都可以。\n" +
+                            "6.把鍋子鋪滿 ,中心放入起司後，放入烤箱160度烤30分鐘即可。 依據每家烤箱火力不同可以增減時間。"  );
+                    break;
+                case 4:
+                    show.setText("1.將水煮蛋用刀子切碎。（底部可以墊一張錫箔紙或是烤培紙，以防蛋黃黏至砧板）\n" +
+                            "2.將切細的水煮蛋倒入碗中，加入適量的沙拉醬與胡椒，混合均勻備用。（攪拌的部分可以請小朋友幫忙，增添參與感與樂趣）\n" +
+                            "3.取一片吐司，加入適量的蛋沙拉餡料（喜歡甜一點的，可以加一些番茄醬）再蓋上另一片吐司備用。\n" +
+                            "4.取一個杯子或碗，從兩片夾心吐司上方，向下重壓並旋轉（稍微出點力，以防吐司散開），當吐司附著於碗內或杯中時，用刀子輕畫周圍，將吐司取出即可。\n" +
+                            "5.將它做成密封夾心不僅別有趣味，還可以防止小朋友吃的滿地都是，非常值得推薦");
+                    break;
+
+
+
+
+            }
+
+        }
+    };
+    private View.OnClickListener Back = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent back2 = new Intent(Main3Activity.this , Main2Activity.class);
+            startActivity(back2);
+        }
+    };
+    private View.OnClickListener Home= new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent Home2 = new Intent(Main3Activity.this, MainActivity.class);
+            startActivity(Home2);
+        }
+    };
+}

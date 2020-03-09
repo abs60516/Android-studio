@@ -1,0 +1,182 @@
+package com.example.user.afinal;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Main5Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main5);
+        Button introduction =(Button)findViewById(R.id.button3);
+        Button material =(Button)findViewById(R.id.button12);
+        Button step =(Button)findViewById(R.id.button13);
+        Button back =(Button)findViewById(R.id.button14);
+        Button home =(Button)findViewById(R.id.button15);
+        back.setOnClickListener(Back);
+        home.setOnClickListener(Home);
+        introduction.setOnClickListener(Introduction);
+        material.setOnClickListener(Material);
+        step.setOnClickListener(Step);
+    }
+    private View.OnClickListener Back = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent1 =new Intent(Main5Activity.this , Main4Activity.class);
+            startActivity(intent1);
+        }
+    };
+    private View.OnClickListener Home = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent2 =new Intent(Main5Activity.this , MainActivity.class);
+            startActivity(intent2);
+        }
+    };
+
+
+    private View.OnClickListener Introduction = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView2);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int j = bundle.getInt("名稱");
+            switch (j){
+                case 5:
+                    show.setText("快炒店可以排進前10名的料理之一，鹹鮮味十足，香氣撲鼻，配 上啤酒，超搭的啦");
+                    break;
+                case 6:
+                    show.setText("中式涼菜中常出現的蒜泥白肉，稍作些變化就成了漂亮好看的年夜菜！底下墊著小黃瓜絲,ㄧ口蒜泥白肉配一口小黃瓜絲讓整道菜清爽又有層次感喔～ ");
+                    break;
+                case 7:
+                    show.setText("三杯雞是中餐廳熱門的菜色,利用鐵鍋的特性,在家一鍋到底烹調輕易就能完成!原汁原味的雞肉加上拌飯超優的醬汁,讓家人讚不絕口、忍不住白飯多吃幾碗哩! ");
+                    break;
+                case 8:
+                    show.setText("宮保意思是乾辣椒，將乾辣椒爆出香氣，與醃過的雞丁一起爆炒\n" +
+                            "加上其他不同辣度的調味料帶出不同的辣椒香氣\n" +
+                            "此外加了洋蔥會減低辣度，如果想吃辣一點的，下手就再重一點");
+
+
+
+            }
+        }
+    };
+
+    private View.OnClickListener Material = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView2);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int j = bundle.getInt("名稱");
+            switch (j){
+                case 5:
+                    show.setText("海瓜子600g\n" +
+                            "薑末20g\n" +
+                            "蒜末20g\n" +
+                            "辣椒（切片）10g\n" +
+                            "九層塔1大把\n" +
+                            "蔥（切花）2支\n" +
+                            "調味料:\n" +
+                            "豆豉1大匙\n" +
+                            "米酒1大匙\n" +
+                            "烏醋1小匙");
+                    break;
+                case 6:
+                    show.setText("豬五花肉條(五花肉片更佳）約250g\n" +
+                            "小黃瓜2條\n" +
+                            "檸檬半顆\n" +
+                            "蒜泥醬:\n" +
+                            "醬油膏或蔭油2湯匙\n" +
+                            "可飲用的水1湯匙半\n" +
+                            "工研黑醋半湯匙\n" +
+                            "蒜泥約4-5瓣量\n" +
+                            "辣椒1條\n" +
+                            "香油1湯匙\n" +
+                            "蔥花2-3根的量");
+                    break;
+                case 7:
+                    show.setText("雞肉300g\n" +
+                            "黑麻油2大匙\n" +
+                            "米酒2大匙\n" +
+                            "醬油膏2大匙\n" +
+                            "水適量\n" +
+                            "冰糖2小匙\n" +
+                            "薑片15片\n" +
+                            "蒜仁6瓣\n" +
+                            "辣椒2根\n" +
+                            "九層塔1大碗");
+                    break;
+                case 8:
+                    show.setText("雞胸肉300g\n" +
+                            "洋蔥半顆\n" +
+                            "熟去皮花生粒適量\n" +
+                            "蔥2根\n" +
+                            "大蒜適量\n" +
+                            "乾辣椒8根\n" +
+                            "生辣椒1根\n" +
+                            "調味料:\n" +
+                            "辣豆瓣醬1大匙\n" +
+                            "醬油膏2大匙\n" +
+                            "紹興酒1大匙\n" +
+                            "雞肉醃料:\n" +
+                            "地瓜粉1小匙\n" +
+                            "醬油1小匙\n" +
+                            "米酒1小匙");
+            }
+        }
+    };
+
+    private View.OnClickListener Step = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            TextView show = (TextView)findViewById(R.id.textView2);
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            int j = bundle.getInt("名稱");
+            switch (j){
+                case 5:
+                    show.setText("1.海瓜子泡水（水裡加一小匙鹽）吐砂，至少泡1小時2.九層塔洗乾淨，取葉子部份就好3.其它食材，一樣洗乾淨後，再切成適當的大小\n" +
+                            "2.鍋裡放1大匙油，把豆豉放入中火炒出香氣。我選擇用濕的豆豉，所以沒有做泡水的動作，如果使用乾豆豉要先泡一下水，瀝乾水分再下鍋炒\n" +
+                            "3.豆豉香氣出來後，加入薑末， 再放入蒜末，拌炒出香氣\n" +
+                            "4.放入海瓜子拌炒，海瓜子受熱外殼就會變色，這時加入1大匙米酒\n" +
+                            "5.蓋上鍋蓋中火悶個3分鐘，這樣裡面熱循環幫助海瓜子打開\n" +
+                            "6.開蓋加入蔥花，辣椒片，拌炒一下\n" +
+                            "7.帶殼的食材熟成時間比較不一致，怕把海瓜子炒過熟，可以先把打開的海瓜子依序夾出，讓不開的在鍋裡受熱久一些，就會開蓋，但原則上開蓋的時間差異在1分鐘內，如果遲遲不開應該也就不會開了！\n" +
+                            "8.再次把海瓜子倒回鍋中，開中火撒上九層塔，淋上烏醋，就可以起鍋囉");
+                    break;
+                case 6:
+                    show.setText("1.豬五花先拿去冷凍庫冰定型，這樣較容易切片。 接著先將小黃瓜、蔥、辣椒、蒜都用可飲用的水清洗後瀝乾。小黃瓜用鹽抓一下後再用可飲用的水清洗掉鹽。蒜頭用擠蒜器壓成蒜泥；辣椒去籽後略拍，切絲後再切成末；蔥切花備用。 將蒜泥、辣椒末與醬油膏、水、黑醋、香油混勻備用。\n" +
+                            "2.小黃瓜切絲後，直接在盤子上堆成三角圓錐狀，放入冰箱備用。\n" +
+                            "3.煮一鍋滾水。 煮水時將豬五花條對切成適當的長度，皮下肉上的從側面切片(註：帶皮口感較Q,不喜歡者可去皮)\n" +
+                            "4.水滾後擠入檸檬汁(可去腥及讓豬肉顯白）\n" +
+                            "5.關小火，肉片全下，用筷子分散所有的肉片，泡煮到肉片浮起來即可撈起瀝乾備用。 註：水不可以大滾否則肉的甜份會被煮掉。\n" +
+                            "6.取出冰鎮小黃瓜，將肉片依續疊放在小黃瓜絲上。蒜泥醬中加入蔥花，略拌勻後淋在擺好的五花肉上。中間放上香菜和巴西里葉做裝飾即可。");
+                    break;
+                case 7:
+                    show.setText("1.備齊主材料。雞肉、九層塔洗淨、辣椒切段、老薑切片。\n" +
+                            "2.鍋中放麻油以小火爆香薑片至微乾後先撈起備用。\n" +
+                            "3.原鍋留麻油,放入雞肉煎到表面金黃(此時雞肉本身會出油,所以不需加油煎),沿鍋邊淋上米酒、加入醬油膏、冰糖炒勻後加入適量的水(約是剛淹到雞肉即可,水不可太多味道會被稀釋)。\n" +
+                            "4.蓋鍋蓋以中小火煮10分鐘。\n" +
+                            "5.打開鍋蓋翻拌後使著色均勻,再加入剛爆香過的薑片以及蒜仁.辣椒段,蓋鍋蓋繼續以中小火煮10分鐘。\n" +
+                            "6.掀鍋蓋轉中大火收汁後關火加入九層塔,利用餘熱使之軟化逼出香氣即可。\n" +
+                            "7.用大古鐵器-雙耳火鍋來料理,不但油的用量可以較少,而且因為保?效果佳,所以雞肉很容易就入味了!");
+                    break;
+                case 8:
+                    show.setText("1.雞胸肉洗淨後切大約2cm小丁\n" +
+                            "2.將雞肉丁與醃料一起稍微抓醃30分鐘\n" +
+                            "3.洋蔥切丁，蔥切段並將蔥白與蔥綠分開 乾辣椒剪大約3cm長度，生大椒切小粒，大蒜切末備用\n" +
+                            "4.起一熱鍋加入1大匙油薑大蒜與生辣椒乾辣椒爆香\n" +
+                            "5.炒出香氣後，薑辣椒撥到鍋邊加入雞丁快速翻炒至稍微變色\n" +
+                            "6.豆瓣醬與醬油膏一起下鍋燒出醬氣，繼續拌炒，再加入蔥白炒到雞肉拌熟 再加入洋蔥與蔥白繼續炒到熟\n" +
+                            "7.起鍋前熗入紹興酒與蔥綠還有花生，即可以盛盤");
+            }
+        }
+    };
+}
